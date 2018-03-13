@@ -1,0 +1,30 @@
+---
+title: "ModularityHW"
+author: "Patrick Krim"
+date: "3/5/2018"
+output: html_document
+---
+
+```{r}
+Temp <- readRDS("USAAnnualTemp1950_2008.rds")
+by <- list(Temp$state, Temp$data)
+aggregate(Temp, by, FUN = 'mean', drop = TRUE)
+
+??list
+for(states in "AK"){
+  print(Temp$data, trim = 0, na.rm = FALSE)
+}
+for (Temp in "AK")
+  {print(Temp$data, na.rm = TRUE)}  
+
+m <- mean.default(Temp$data, trim = 0, na.rm = TRUE)
+sd((Temp$data) / sqrt(Temp$data), na.rm = TRUE)
+se <- sd((Temp$data) / sqrt(Temp$data), na.rm = TRUE)
+c(m-1.96*se, m+1.96*se)
+print(se)
+??data.frame
+
+```
+
+
+
