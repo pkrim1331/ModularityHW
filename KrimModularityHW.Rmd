@@ -1,0 +1,119 @@
+---
+title: "ModularityHW"
+author: "Patrick Krim"
+date: "3/5/2018"
+output: pdf_document
+---
+I did the writing based on if all the data was presented properly.  
+```{r cache=TRUE}
+
+#Temp <- readRDS("USAAnnualTemp1950_2008.rds")
+#For some reason when I recovered my file from Dropbox I have been unable to bring in this file as it says it doesn't exist even though I moved it to MudularityHW diresctory and then to EVRN 420 folder and neither worked. I have also just commented out all my code so I could transfer it to pdf.
+```
+Abstract:  
+Every year there is a new record high temperature for many areas. This is an issue because it poses numerous environmental effects that could damage animals and people. We can see if these temperatures are increasing with daily readings all across the US and seeing the average temperatures for each year.  
+Intro:  
+It seems like weather men/women have been saying each new year is hotter than the previous. An increase in temperature throughout the world can cause detremental health effects for the planet. Many organisms can suffer and become extinct if we are not careful. Other organisms rely heavily on their environment like the polar bear and their enviornment is shrinking with warmer temperatures.  
+
+```{r, cache=TRUE}
+#q <- Temp$data
+#summary(q)
+#Graph1<-hist((q), breaks = 13, xlim = c(20,80), xlab = "Temperature (F)", ylab = "Frequency", main = "Frequency of Temperature") 
+#Plot a histogram of all the temperature data recorded to show where all of data falls in comparrison to one another as there are thousands of data points
+#b <- aggregate(Temp[ ,c(5)], by= list(Temp[,1]), FUN = range, na.rm= TRUE)
+#p <- aggregate(Temp[ ,c(5)], by= list(Temp[,6]), FUN = average, na.rm= TRUE)
+#plot(b)
+#The range temperature for each state through all the years
+
+#A majority of my time was spent on trying to get the API to work and so was not able to really manipulate the data in a way that provided a clear way to show that climate change was happening.
+
+```
+ 
+```{r}
+#m <- mean.default(b$x, trim = 0)
+#se <- sd((b$x) / sqrt(b$x))
+#c(m-1.96*se, m+1.96*se)
+#print(se)
+```
+Methods:  
+After gathering the data from each weather station across all of the US year after year, and plotting the ranges of each year for every state and show the frequency of each temperature. The data is coming from the Applied Climate Information System website provided by US NOAA. This is updated regularly with multiple sets of data with one being the average temperature.  
+Reults:  
+The range of temperature shows a high variation for the northern states that typically are much colder than the southern states. Alsaka has the largest variation, even though it stays relatively cool all year. Then the histogram shows the majority of temperatures occur around the 51-53 degree range, with a very large portion of the temperatures above the mean. There are significantly less data for temperatures below 51 degrees.  
+Discussion:  
+With most of the temperatures occuring over the median with a multitude of states in far northern region shows that over the course of all the years the majority of temperatures are relatively warm. The range on each state can be quite large with Alaska having the largest range. Even though it has fairly cold temperatures the highest part of the range is over the median. If the temperatures are mostly over 51 degrees then the temperature is rising. The range of temperature shows where on a scale they typically fall and most of them are pretty high for temperatures that should be more evenly split. If this trend continues then effects will be seen more readily and will cause serious damage.  
+
+Refrences:  
+All data aquired through :
+ACIS builder at builder.rcc-acis.org
+http://data.rcc-acis.org/MultiStnData?params=%7B%22state%22%3A%22ca%22%2C%22sdate%22%3A%2220150101%22%2C%22edate%22%3A%2220150301%22%2C%22elems%22%3A%22pcpn%22%7D
+
+```{r}
+#library(httr)
+#KS1.url <- "http://data.rcc-acis.org/MultiStnData?params=%7B%22state%22%3A%22ks%22%2C%22sdate%22%3A%2219500101%22%2C%22edate%22%3A%2219800101%22%2C%22elems%22%3A%5B%7B%22name%22%3A%22avgt%22%2C%22interval%22%3A%22yly%22%2C%22duration%22%3A%22yly%22%2C%22reduce%22%3A%22mean%22%7D%5D%7D"
+#test <- httr::GET(url=KS1.url)
+#dat <- httr::content(test, as = "text", type = "application/json", encoding = "UTF-8")
+#json_data <- jsonlite::fromJSON(dat)
+#ifelse(dir.exists("rds"), "dir all ready exists", dir.create("rds"))
+#sdate <- as.Date("1950-01-01")
+#edate <- as.Date("1980-01-01")
+#newFN <- paste0("rds/",state.abb,"_",sdate,".rds")
+#  saveRDS(json_data, file= "newFN")
+#ff <- sapply(json_data$data$data, cbind)
+  #ff[ff=="M"] <- NA
+  #trace <- runif(1000,0.0001,.0099)
+  #ff[ff=="T"] <- sample(trace, replace = T, size = 1)
+  #class(ff) <- "numeric"
+  #dates <- seq.Date(from=lubridate::ymd(sdate), to=lubridate::ymd(edate), by = "1 days")
+  #year <- as.factor(lubridate::year(dates))
+#plot(ff)  
+
+#ff <- data.frame(dates=dates,ff)
+ # names(ff) <- c("date",paste(json_data$data$meta$state["state"],json_data$data$meta$name["name"], json_data$data$meta$ll["long"]["lat"], sep="_"))
+  #ff$year <- as.factor(lubridate::year(ff))
+  #fc <- aggregate(by=list(ff$year), x=ff[,2:(ncol(ff)-1)], mean)
+  #names(fc)[1] <- "year"
+  #fc$year <- as.numeric(as.character(fc$year))
+  #annualmean <- cbind(annualmean, fc)
+  #print(state.abb[i])
+  #print(Sys.time())
+
+```
+
+```{r}
+#acisdf <- function(sdate= "19500101", edate= "19800101", states=state.abb){
+  #annualmean <- data.frame(NA)
+  #for (i in seq_along(states)) {
+#url for ks data over temp
+    #base.url<- "http://data.rcc-acis.org/MultiStnData?"
+    #params1.url<- "%7B%22state%22%3A%22ks"
+    #params2.url<- "%22%2C%22sdate%22%3A%2219500101%22%2C%22"
+    #params3.url<- "edate%22%3A%2219800101%22%2C%22"
+    #params4.url<- "elems%22%3A%22avgt%22%7D"
+    #acisdf<- paste0(base.url, params1.url, state.abb[i], params2.url, sdate, params3.url, edate, params4.url)
+  #test <- httr::GET(url=acisdf)
+  #dat<- httr::content(test, "text","application/json", encoding="UTF-8")
+  #json_data <- jsonlite::fromJSON(dat)
+  #ifelse(dir.exists("rds"), "dir already exists", dir.create("rds"))
+  #ifelse(dir.exists("data"), "dir already exists", dir.create("data"))
+  #hw <- paste0("rds/",state.abb[ks],"_",sdate,".rds")
+  #saveRDS(json_data, file=hw)
+  #pk <- sapply(json_data$data$data, cbind)
+  #pk[pk=="M"] <- NA
+  #trace <- runif(1000, 0.0001, 0.0099)
+  #pk[pk=="T"] <- sample(trace, replace = T, size = 1)
+  #class(pk)<- "numeric"
+  #dates <- seq.Date(from=lubridate::ymd(sdate), to=lubridate::ymd(edate), by = "1 days")
+  #year <- as.factor(lubridate::year(dates))
+  
+  #pk <- data.frame(dates=dates,pk)
+  #names(pk) < c("date",paste(json_data$data$meta$state[],json_data$data$meta$name[], json_data$data$meta$ll[][], sep="_"))
+  #pk$year <- as.factor(lubridate::year(pk$date))
+  #fc <- aggregate(by=list(pk$year), x=pk[,2:(ncol(pk)-1)], mean)
+  #names(fc)[1]<-"year"
+  #fc$year <- as.numeric(as.character(fc$year))
+  #annualmean <- cbind(annualmean, fc)
+  #print(state.abb[ks])
+  #print(Sys.time())
+#Sys.sleep(2)}}
+
+```
