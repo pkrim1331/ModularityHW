@@ -4,12 +4,22 @@ author: "Patrick Krim"
 date: "3/5/2018"
 output: pdf_document
 ---
+
+<!--***DAN: I am glad to see you got the code into Git, but you are not using git optimally - I only see one commit for each copy of the assignment (somehow there are two separately named copies of the assignment - there should only be one - one has an underscore in the title between words and only has one R chunk), whereas it would be better to have done more commits as you got through different stages. Just as you want to do more saves, so you don't lose what you are working on. Ask Dan or Terry for a review of git or rewatch the git lecture if you need help with this.-->
+
+<!--***DAN: I am also glad to see the presence of chunks interspersed with separate text. -->
+
+<!--***DAN: Patrick, the grade is based on effortful completion *of all parts of the assignment*. I can tell you have put in a lot of effort overall, but it was misallocated (and also you had a lot of IT issues), so you did not allocate effort to all parts of the assignment. You ended up not turning in any code that was not commented out, and you also ended up not doing the part of the assignment in which you were asked to insert comments in your code indicating where you had used the 10 modularity rules (or some of them). So you grade as it currently stands is 5/10, but read on. I would like to see you go back and  make at least some of the code work, so you can uncomment it. I want to see you insert the modularity comments. Then I will give points back on this assignment. I can help when we meet next week to overcome some of your IT issues. I am confident we can get you set up so your code at least runs without commenting out the code itself. In the meantime, please go back and reread or rewatch the modularity material from the course th refamiliarize yourself with the 10 lessons of modularity. Try not to be discouraged about this, as you can still fix it and we will support you in so doing.-->
+
 I did the writing based on if all the data was presented properly.  
 ```{r cache=TRUE}
 
 #Temp <- readRDS("USAAnnualTemp1950_2008.rds")
 #For some reason when I recovered my file from Dropbox I have been unable to bring in this file as it says it doesn't exist even though I moved it to MudularityHW diresctory and then to EVRN 420 folder and neither worked. I have also just commented out all my code so I could transfer it to pdf.
 ```
+
+<!--***DAN: The above command readRDS should work if your Rmd and rds are in the same directory. -->
+
 Abstract:  
 Every year there is a new record high temperature for many areas. This is an issue because it poses numerous environmental effects that could damage animals and people. We can see if these temperatures are increasing with daily readings all across the US and seeing the average temperatures for each year.  
 Intro:  
@@ -26,6 +36,8 @@ It seems like weather men/women have been saying each new year is hotter than th
 #The range temperature for each state through all the years
 
 #A majority of my time was spent on trying to get the API to work and so was not able to really manipulate the data in a way that provided a clear way to show that climate change was happening.
+
+#***DAN: I can understand, the api is tough. Next time, if you see youself starting to spend a huge amount of time on one part of the assignment (especially one which we said was not central, as in this case), drop it and go for the core of the assignment.
 
 ```
  
